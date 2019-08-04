@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Movies App</string>
+    <string name="title_movies">Movies</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="title_actors">Actors</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+</resources>
+
