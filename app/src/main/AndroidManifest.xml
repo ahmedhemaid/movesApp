@@ -16,19 +16,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main2">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".MainActivity"
+<activity   android:name=".activites.MainActivity"
             android:label="@string/app_name">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+        </activity>
+        <activity android:name=".activites.MovieDetails">
 
         </activity>
+        <activity android:name=".activites.ActorDetails">
+
+        </activity>
+        <activity android:name=".genres.ActionMovies">
+
+        </activity>
+        <activity android:name=".genres.AnimationMovies">
+
+        </activity>
+        <activity android:name=".genres.ComedyMovies">
+
+        </activity>
+        <activity android:name=".genres.RomanticMovies">
+
+        </activity>
+        <activity android:name=".genres.DramaMovies">
+
+        </activity>
+
     </application>
+
 
 </manifest>

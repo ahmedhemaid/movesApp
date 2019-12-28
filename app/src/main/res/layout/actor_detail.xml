@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/profileActorPhoto"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/willsmith"
+                />
+            <TextView
+                android:id="@+id/actor_name_in_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="actor name"
+                android:layout_below="@+id/profileActorPhoto"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:textSize="30dp"
+                android:textColor="#000000"
+                />
+            <TextView
+                android:id="@+id/movie_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/actor_name_in_details"
+                android:layout_marginTop="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="here is a test for description of movie so for example let say its an animation moview about the lion king"
+                android:textSize="20dp"
+                />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

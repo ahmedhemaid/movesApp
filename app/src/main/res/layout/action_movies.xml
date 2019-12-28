@@ -4,12 +4,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/grid_list_view_actors"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:listitem="@layout/row_of_actors"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="51dp">
-    </android.support.v7.widget.RecyclerView>
+        android:text="Action Movies"
+        android:gravity="center"
+        android:textSize="30dp">
+
+    </TextView>
 </LinearLayout>

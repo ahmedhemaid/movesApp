@@ -6,11 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
-    tools:context=".MainActivity">
+    tools:context=".activites.MainActivity">
  //navigation view
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        app:headerLayout="@layout/header"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
@@ -20,7 +19,7 @@
         android:layout_gravity="start">
     </android.support.design.widget.NavigationView>
     <FrameLayout
-        android:background="#000000"
+        android:background="#FFFFFF"
         android:id="@+id/container_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -29,16 +28,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <android.support.design.widget.BottomNavigationView
-        app:itemTextColor="#FFFEFE"
-        app:itemIconTint="#FFFFFF"
-        android:outlineAmbientShadowColor="#FFFFFF"
-        android:outlineSpotShadowColor="#FFFFFF"
+        app:itemTextColor="#000000"
+        app:itemIconTint="#000000"
+        android:outlineAmbientShadowColor="#000000"
+        android:outlineSpotShadowColor="#000000"
         android:id="@+id/navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
-        android:background="#000000"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
