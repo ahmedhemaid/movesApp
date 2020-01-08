@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -52,8 +52,8 @@ public class MoviesFragment extends Fragment  implements RecyclerAdapterMovies.O
 
         rootView=inflater.inflate(R.layout.moviefragment, container, false);
         // UI
-        recyclerView = rootView.findViewById(R.id.grid_list_view_movies);
-        listView=rootView.findViewById(R.id.grid_list_view_movies);
+        recyclerView = rootView.findViewById(R.id.top_movies_list_view);
+        listView=rootView.findViewById(R.id.top_movies_list_view);
 
         //titleMovie.setText("");
         // Data Set
@@ -72,7 +72,7 @@ public class MoviesFragment extends Fragment  implements RecyclerAdapterMovies.O
     public void onItemClick(int position) {
     }
     private void getPopularMovies() {
-        GridLayoutManager mLayoutManager=new GridLayoutManager(getContext(),2);
+        RecyclerView.LayoutManager mLayoutManager=new LinearLayoutManager(this.getContext(),LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(mLayoutManager);
         // Get popular movies
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
