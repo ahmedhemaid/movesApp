@@ -8,6 +8,7 @@ public class Movie {
     private String overview;
     private String release_date;
     private int[] genre_ids;
+    private String genre;
     private int id;
     private String original_title;
     private String original_language;
@@ -23,6 +24,7 @@ public class Movie {
     private String linkOfImage;
     private Boolean isFavorite=false;
     private ImageView favoriteIcon;
+    private String budget;
 
     public Movie(String name, String description) {
         this.name = name;
@@ -30,6 +32,11 @@ public class Movie {
     }
     public Movie(int id){
         this.id=id;
+    }
+    public Movie(int id,String title,String poster_path){
+        this.id=id;
+        this.title=title;
+        this.poster_path=poster_path;
     }
     public Movie() {
     }
@@ -161,5 +168,21 @@ public class Movie {
 
     public void setFavoriteIcon(ImageView favoriteIcon) {
         this.favoriteIcon = favoriteIcon;
+    }
+
+    public String getBudget() {
+        return budget;
+    }
+
+    public void setBudget(String budget) {
+        this.budget = budget;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }

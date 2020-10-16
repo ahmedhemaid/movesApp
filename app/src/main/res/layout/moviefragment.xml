@@ -3,218 +3,351 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#D3D1D1"
+    android:background="#46F0EDED"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Movies"
+        android:layout_marginLeft="16dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="32sp"
+        ></TextView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:layout_marginBottom="8dp"
+        ></View>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="51dp">
+        >
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#EEEAEA"
-            android:elevation="5dp"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recent Movies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8000000"
+                android:layout_margin="8dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/show_more_recent"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recent_movies_list_view"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            >
+        </android.support.v7.widget.RecyclerView>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Top Movies"
-        android:textSize="24sp"
-        android:textColor="#000"
+        android:text="Popular Movies"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#C8000000"
         android:layout_margin="8dp"
         ></TextView>
+            <TextView
+                android:id="@+id/show_more_popular"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/top_movies_list_view"
+        android:id="@+id/popular_movies_list_view"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        tools:listitem="@layout/row_of_movie"
         android:layout_width="match_parent"
         android:layout_height="310dp"
         >
     </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#EEEAEA"
-            android:elevation="5dp"
+            android:orientation="horizontal"
             >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Recent Movies"
-            android:textSize="24sp"
-            android:textColor="#000"
-            android:layout_margin="8dp"
-            ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Top Rated Movies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8000000"
+                android:layout_margin="8dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/show_more_top_rated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recent_movies_list_view"
+            android:id="@+id/top_rated_movies_list_view"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            tools:listitem="@layout/row_of_movie"
             android:layout_width="match_parent"
             android:layout_height="310dp"
             >
         </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#EEEAEA"
-            android:elevation="5dp"
-            >
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Action Movies"
-            android:textSize="24sp"
+            android:text="Movies genres"
             android:textColor="#000"
-            android:layout_margin="8dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             ></TextView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:background="#6B000000"
+            android:layout_marginHorizontal="20dp"
+            ></View>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Action Movies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8000000"
+                android:layout_margin="8dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/show_more_action"
+                android:onClick="showMoreAction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/action_movies_list_view"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            tools:listitem="@layout/row_of_movie"
             android:layout_width="match_parent"
             android:layout_height="310dp"
             >
         </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#EEEAEA"
-            android:elevation="5dp"
+            android:orientation="horizontal"
             >
             <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Drama Movies"
-            android:textSize="24sp"
-            android:textColor="#000"
-            android:layout_margin="8dp"
-            ></TextView>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Drama Movies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8000000"
+                android:layout_margin="8dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/show_more_drama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/drama_movies_list_view"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            tools:listitem="@layout/row_of_movie"
             android:layout_width="match_parent"
             android:layout_height="310dp"
             >
         </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#EEEAEA"
-            android:elevation="5dp"
+            android:orientation="horizontal"
             >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Horror Movies"
-            android:textSize="24sp"
-            android:textColor="#000"
-            android:layout_margin="8dp"
-            ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Horror Movies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8000000"
+                android:layout_margin="8dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/show_more_horror"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/horror_movies_list_view"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            tools:listitem="@layout/row_of_movie"
             android:layout_width="match_parent"
             android:layout_height="310dp"
             >
         </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#EEEAEA"
-            android:elevation="5dp"
+            android:orientation="horizontal"
             >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Romantic Movies"
-            android:textSize="24sp"
-            android:textColor="#000"
-            android:layout_margin="8dp"
-            ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Romantic Movies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8000000"
+                android:layout_margin="8dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/show_more_romantic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/romantic_movies_list_view"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            tools:listitem="@layout/row_of_movie"
             android:layout_width="match_parent"
             android:layout_height="310dp"
             >
         </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#EEEAEA"
-            android:elevation="5dp"
+            android:orientation="horizontal"
             >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Comedy Movies"
-            android:textSize="24sp"
-            android:textColor="#000"
-            android:layout_margin="8dp"
-            ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comedy Movies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8000000"
+                android:layout_margin="8dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/show_more_comedy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/comedy_movies_list_view"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            tools:listitem="@layout/row_of_movie"
             android:layout_width="match_parent"
             android:layout_height="310dp"
             >
         </android.support.v7.widget.RecyclerView>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#EEEAEA"
-            android:elevation="5dp"
+            android:orientation="horizontal"
             >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Animation Movies"
-            android:textSize="24sp"
-            android:textColor="#000"
-            android:layout_margin="8dp"
-            ></TextView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Animation Movies"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#C8000000"
+                android:layout_margin="8dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/show_more_animation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="show more"
+                android:textColor="#E22821"
+                android:layout_marginTop="8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:drawableRight="@drawable/showmore"
+                ></TextView>
+        </RelativeLayout>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/animation_movies_list_view"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            tools:listitem="@layout/row_of_movie"
             android:layout_width="match_parent"
             android:layout_height="310dp"
             >
         </android.support.v7.widget.RecyclerView>
         </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+            </ScrollView>
 </LinearLayout>

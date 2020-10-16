@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -11,37 +11,138 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ImageView
+<ImageView
+    android:id="@+id/actor_background"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@drawable/actorbackground"
+    ></ImageView>
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profileActorPhoto"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true"
-                android:src="@drawable/willsmith"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="120dp"
+                app:civ_border_color="#FFF"
+                app:civ_border_width="5dp"
+                android:layout_marginLeft="20dp"
                 />
             <TextView
                 android:id="@+id/actor_name_in_details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="actor name"
-                android:layout_below="@+id/profileActorPhoto"
+                android:textStyle="bold"
+                android:layout_toRightOf="@+id/profileActorPhoto"
+                android:layout_below="@id/actor_background"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:textSize="30dp"
+                android:layout_marginLeft="0dp"
+                android:textSize="24sp"
                 android:textColor="#000000"
                 />
             <TextView
-                android:id="@+id/movie_description"
+                android:id="@+id/actor_popularity"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/view"
+                android:layout_marginHorizontal="24dp"
+                android:layout_height="wrap_content"></TextView>
+            <ImageView
+                android:id="@+id/favorite_actor_on_details"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/unfavorite"
+                android:layout_below="@id/profileActorPhoto"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="32dp"
+                ></ImageView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actor Details"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:layout_below="@id/profileActorPhoto"
+                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                ></TextView>
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E4000000"
+                android:layout_below="@id/favorite_actor_on_details"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="16dp"
+                ></View>
+            <TextView
+                android:id="@+id/actor_birth_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/actor_name_in_details"
-                android:layout_marginTop="20dp"
+                android:layout_below="@+id/actor_popularity"
+                android:layout_marginHorizontal="24dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/actor_known_of_department"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/actor_birth_day"
+                android:layout_marginHorizontal="24dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/actor_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/actor_known_of_department"
+                android:layout_marginHorizontal="24dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/actor_place_of_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/actor_gender"
+                android:layout_marginHorizontal="24dp"
+                ></TextView>
+            <TextView
+                android:id="@+id/actor_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/biography"
                 android:layout_marginHorizontal="20dp"
-                android:text="here is a test for description of movie so for example let say its an animation moview about the lion king"
-                android:textSize="20dp"
+                android:text="There is no biography about this actor"
                 />
+            <TextView
+                android:id="@+id/biography"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Biography"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/actor_place_of_birth"
+                android:layout_marginLeft="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                ></TextView>
+            <TextView
+                android:id="@+id/famous_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Famous Movies"
+                android:layout_below="@id/actor_description"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                ></TextView>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/actor_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/famous_movies"
+                ></android.support.v7.widget.RecyclerView>
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

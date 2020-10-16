@@ -2,14 +2,45 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0EDED"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actors"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        android:textSize="32sp"
+        android:textColor="#000"
+        ></TextView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:layout_marginVertical="8dp"
+        ></View>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/grid_list_view_actors"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:listitem="@layout/row_of_actors"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="51dp">
-    </android.support.v7.widget.RecyclerView>
+        android:layout_alignParentTop="true"
+        />
+    <ProgressBar
+        android:id="@+id/progress_actors"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ></ProgressBar>
+    </RelativeLayout>
 </LinearLayout>

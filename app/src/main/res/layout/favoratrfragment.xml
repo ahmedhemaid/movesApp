@@ -5,19 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FFFFFF"
-    android:layout_marginHorizontal="15dp"
+    android:background="#F0EDED"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Favorites"
+        android:textSize="32sp"
+        android:textColor="#000"
+        android:layout_marginLeft="16dp"
+        ></TextView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="#000"
+        android:layout_marginVertical="8dp"
+        ></View>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
         android:text="Favorite movies"
         android:textStyle="bold"
+        android:textColor="#000"
         android:textSize="16sp" />
 
-    <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/fav_movies_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,16 +47,17 @@
         android:orientation="horizontal"
         app:msrv_gravity="start"
         app:msrv_snap_count="1" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
         android:text="Favorite actors"
         android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:textColor="#000"
         android:textSize="16sp" />
 
-    <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/fav_actors_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,4 +65,6 @@
         android:orientation="horizontal"
         app:msrv_gravity="center"
         app:msrv_snap_count="2" />
+</LinearLayout>
+    </ScrollView>
 </LinearLayout>

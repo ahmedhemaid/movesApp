@@ -36,6 +36,10 @@ public class FavoriteActorsAdapter extends RecyclerView.Adapter<FavoriteActorsAd
         return new MyViewHolder(view);
     }
     @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+    @Override
     public void onBindViewHolder(final FavoriteActorsAdapter.MyViewHolder viewHolder, int i){
 
 

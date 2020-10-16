@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.moviesapp.R;
 import com.example.moviesapp.activites.ActorDetails;
+import com.example.moviesapp.api.TheMovieDBAPI;
 import com.example.moviesapp.basese.Actor;
 import com.squareup.picasso.Picasso;
 
@@ -38,6 +39,10 @@ public class RecyclerAdapterActors extends RecyclerView.Adapter<RecyclerAdapterA
         mActors = movies;
     }
     // Usually involves inflating a layout from XML and returning the holder
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
     @NonNull
     @Override
     public RecyclerAdapterActors.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -83,7 +88,7 @@ public class RecyclerAdapterActors extends RecyclerView.Adapter<RecyclerAdapterA
             public void onClick(View v) {
                 Intent intent=new Intent(holder.itemView.getContext(), ActorDetails.class);
                 intent.putExtra("idActor",mActors.get(position).getId());
-
+                TheMovieDBAPI.idActorAPI=mActors.get(position).getId();
                 holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -108,7 +113,7 @@ public class RecyclerAdapterActors extends RecyclerView.Adapter<RecyclerAdapterA
     @Override
 
     public int getItemCount() {
-        return mActors.size();
+            return mActors.size();
     }
 
     // Provide a direct reference to each of the views within a data item

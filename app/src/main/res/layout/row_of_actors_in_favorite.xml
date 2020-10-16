@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v7.widget.CardView
     android:background="@drawable/border_card"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="150dp"
     android:layout_height="250dp"
     android:layout_margin="5dp"
-
     >
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 <ImageView
     android:id="@+id/image_view_actor_fav"
     android:layout_width="150dp"
     android:layout_height="200dp"
-    android:layout_margin="10dp"
-    android:src="@drawable/willsmith"/>
+    android:layout_margin="10dp"/>
     <TextView
         android:fontFamily="sans-serif-black"
         android:textStyle="italic"
@@ -34,4 +35,5 @@
         android:layout_below="@id/image_view_actor_fav"
         android:layout_toRightOf="@id/text_view_actor_name_fav"
         ></ImageView>
-   </RelativeLayout>
+    </RelativeLayout>
+   </android.support.v7.widget.CardView>

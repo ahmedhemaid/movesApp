@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Actor {
+    public ArrayList<Movie> famousMovies;
     private String name;
     private String description;
-    private String dateOfActor;
+    private String birthday;
     private String linkOfImage;
+    private String knownOfDepartment;
+    private String gender;
+    private String popularity;
+    private String place_of_birth;
     private Boolean isFavorite=false;
     private int id;
 
@@ -15,9 +20,13 @@ public class Actor {
         this.name=name;
     }
     public Actor(){}
-
-    public void setDateOfActor(String dateOfActor) {
-        this.dateOfActor = dateOfActor;
+    public Actor(int id,String name,String linkOfImage){
+        this.name=name;
+        this.id=id;
+        this.linkOfImage=linkOfImage;
+    }
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public void setDescription(String description) {
@@ -39,8 +48,8 @@ public class Actor {
         return isFavorite;
     }
 
-    public String getDateOfActor() {
-        return dateOfActor;
+    public String getBirthday() {
+        return birthday;
     }
 
     public String getDescription() {
@@ -70,5 +79,37 @@ public class Actor {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getKnownOfDepartment() {
+        return knownOfDepartment;
+    }
+
+    public void setKnownOfDepartment(String knownOfDepartment) {
+        this.knownOfDepartment = knownOfDepartment;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getPopularity() {
+        return popularity;
+    }
+
+    public void setPopularity(String popularity) {
+        this.popularity = popularity;
+    }
+
+    public String getPlace_of_birth() {
+        return place_of_birth;
+    }
+
+    public void setPlace_of_birth(String place_of_birth) {
+        this.place_of_birth = place_of_birth;
     }
 }

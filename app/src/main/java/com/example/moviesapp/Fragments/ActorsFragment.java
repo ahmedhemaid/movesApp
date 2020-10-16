@@ -6,12 +6,14 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -20,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.example.moviesapp.R;
 import com.example.moviesapp.activites.ActorDetails;
+import com.example.moviesapp.activites.MainActivity;
 import com.example.moviesapp.adapter.RecyclerAdapterActors;
 import com.example.moviesapp.api.TheMovieDBAPI;
 import com.example.moviesapp.api.VolleySingleton;
@@ -34,17 +37,15 @@ import java.util.List;
 
 public class ActorsFragment extends Fragment implements RecyclerAdapterActors.OnItemClickListener {
     private final String TAG = "VOLLEY";
-    static Bundle actorsNames;
-    static String a;
+    private int pageNumber=1;
     static ArrayList<CharSequence>titles;
-    ActorDetails detailsFragment =new ActorDetails();
     RecyclerView listView;
-    static List<Actor> actorList;
+    public static List<Actor> actorList;
     RecyclerAdapterActors adapter;
     RecyclerView recyclerView;
-    TextView actorName ;
-    ImageView imageViewActor;
     View rootView;
+    int page=1;
+    ProgressBar progressBar;
     @SuppressLint("ResourceType")
     @Nullable
     @Override
@@ -55,9 +56,9 @@ public class ActorsFragment extends Fragment implements RecyclerAdapterActors.On
         recyclerView = rootView.findViewById(R.id.grid_list_view_actors);
         listView=rootView.findViewById(R.id.grid_list_view_actors);
         //titleMovie.setText("");
-        // Data Set
-
-
+        // progress bar
+        progressBar=rootView.findViewById(R.id.progress_actors);
+        progressBar.setVisibility(View.VISIBLE);
         // Custom Adapter (Bridge between UI & Data Set)
         // Attach the adapter to the ListView
         getActorDetails();
@@ -68,11 +69,13 @@ public class ActorsFragment extends Fragment implements RecyclerAdapterActors.On
     }
 
     private void getActorDetails() {
-        GridLayoutManager mLayoutManager=new GridLayoutManager(getContext(),2);
+        final RecyclerView.LayoutManager mLayoutManager=new GridLayoutManager(this.getContext(),2);
         recyclerView.setLayoutManager(mLayoutManager);
+        //pagination
+
         // Get popular movies
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.GET, TheMovieDBAPI.actorsDetailsURL,
+                (Request.Method.GET, TheMovieDBAPI.actorsDetailsURL+page,
                         null,
                         new Response.Listener<JSONObject>() {
                             @Override
@@ -99,6 +102,7 @@ public class ActorsFragment extends Fragment implements RecyclerAdapterActors.On
                                         actor.setLinkOfImage(linkOfImage);
                                         actor.setId(id);
                                         actorList.add(actor);
+                                        progressBar.setVisibility(View.GONE);
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();

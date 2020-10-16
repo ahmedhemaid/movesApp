@@ -10,6 +10,10 @@
         android:icon="@drawable/businessman"
         android:title="@string/title_actors" />
     <item
+        android:id="@+id/search_icon"
+        android:icon="@drawable/search_nav"
+        android:title="@string/title_search" />
+    <item
         android:id="@+id/favorite_icon"
         android:icon="@drawable/favorite"
         android:title="@string/title_favorite" />
